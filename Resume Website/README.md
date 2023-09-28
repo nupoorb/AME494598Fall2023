@@ -16,20 +16,20 @@
 <img width="484" alt="image" src="https://github.com/nupoorb/AME494598Fall2023/assets/35562572/6da44505-648e-4878-9bf6-fa447e15dac4">
 <br>
 <h3>Hyperlinks</h3>
-Text as hyperlink
+Text as hyperlink<br>
 <img width="509" alt="image" src="https://github.com/nupoorb/AME494598Fall2023/assets/35562572/91e3b204-c162-4093-a3de-5e36fafacb8f">
 <img width="509" alt="image" src="https://github.com/nupoorb/AME494598Fall2023/assets/35562572/4a02a96d-2694-4ead-9c2a-e8d4d9da64ef">
 <br>
-Icons as hyperlink
+Icons as hyperlinks<br>
 <img width="382" alt="image" src="https://github.com/nupoorb/AME494598Fall2023/assets/35562572/0ff0a212-681b-4f1a-be2a-bb4c25c3d3b6">
 <img width="464" alt="image" src="https://github.com/nupoorb/AME494598Fall2023/assets/35562572/ac2f536d-b595-4376-bf0c-da2557a9a09e">
 
 <h3>Lists</h3>
-Ordered List
+Ordered List<br>
 <img width="950" alt="image" src="https://github.com/nupoorb/AME494598Fall2023/assets/35562572/f16ca0bc-5360-4781-b705-cd2ad3e2ae55">
 <img width="448" alt="image" src="https://github.com/nupoorb/AME494598Fall2023/assets/35562572/de021838-b2d8-4ec7-a3b0-1ccd14eaefa6">
 <br>
-Unordered List
+Unordered List<br>
 <img width="956" alt="image" src="https://github.com/nupoorb/AME494598Fall2023/assets/35562572/6be0e256-5f9a-4c60-9db8-a0c8d8657aec">
 <img width="398" alt="image" src="https://github.com/nupoorb/AME494598Fall2023/assets/35562572/4f3f8fba-aba0-49e4-9119-a949bb10ee9e">
 
