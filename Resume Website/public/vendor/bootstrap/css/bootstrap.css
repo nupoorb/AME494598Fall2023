@@ -7542,6 +7542,7 @@ button.bg-dark:focus {
 .mb-5,
 .my-5 {
   margin-bottom: 3rem !important;
+  text-align: center !important;
 }
 
 .ml-5,
@@ -8965,11 +8966,14 @@ a.text-dark:hover, a.text-dark:focus {
   }
   .table td,
   .table th {
-    background-color: #fff !important;
+    background-color: #690069 !important;
   }
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important;
+    text-align: center;
+    padding: 5px;
   }
+  
 }
 /*# sourceMappingURL=bootstrap.css.map */
