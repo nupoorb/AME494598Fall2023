@@ -18,5 +18,68 @@ function start()
 <body onload='start()'>
 <h1> Temperature/Humidity</h1>
 <div id='results'> </div>
+
+<div id = 'tutorial'>
+  <h1>Tutorial</h1>
+  <details>
+    <summary>Starting a EC2 Instance</summary>
+    <p>
+      <ol>
+        <li>Go to EC2 instace</li> 
+        <li>Launch instance with requirements
+          <ul>
+            <li>OS - <i>Ubuntu 20.04 LTS(HVM) SSD Volume Type</i></li>
+            <li>Key pair - <i>Proceed without a key pair</i></li>
+            <li>Configure storage - <i>28GB</i></li>
+          </ul>
+        </li>
+        <li>Install dependencies using:
+          <code>curl -s https://gist.githubusercontent.com/tejaswigowda/f289e9bff13d152876e8d4b3281142f8/raw/df37df2e16a3166e686357a045751a7c18bbeebe/installNodeMongoUbuntu16.04.sh  | bash</code>
+        </li>
+      </ol>
+    </p>
+  </details>
+  <details>
+    <summary>Hosting server</summary>
+    <p>
+
+    </p>
+  </details>
+  <details>
+    <summary>Connecting to MongoDB</summary>
+    <p>
+      On the server -
+      <ul>
+        <li>Run command to start mongo <code>sudo service mongod start</code></li>
+        <li>Configure mongo firewall
+          <ul>
+            <li><code>sudo nano /etc/mongod.conf</code></li>
+            <li>Under <code>#network interfaces</code> change net.bindIp to 0.0.0.0
+              <br>
+              <img src="./img/mongo1.png" width="300">
+            </li>
+          </ul>
+        </li>
+        <li>
+          Configure EC2 firewall
+          <ul>
+            <li>Add inbound rule: <ul>
+              <li>Type → custom tcp</li>
+              <li>Port → 27017</li>
+              <li>Source → my ip</li>
+              <img src="./img/mongo2.png" width="300">
+            </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      Locally - 
+      <ul>
+        <li>Download and install MongoDBCompass</li>
+        <li>Connect using <code>mongodb://&lt;ec2 public ip&gt;:27017</code></li>
+      </ul>
+    </p>
+  </details>
+</div>
 </body>
 </html>
