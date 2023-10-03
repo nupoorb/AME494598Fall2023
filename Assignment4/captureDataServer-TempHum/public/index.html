@@ -33,8 +33,8 @@ function start()
             <li>Configure storage - <i>28GB</i></li>
           </ul>
         </li>
-        <li>Install dependencies using:
-          <code>curl -s https://gist.githubusercontent.com/tejaswigowda/f289e9bff13d152876e8d4b3281142f8/raw/df37df2e16a3166e686357a045751a7c18bbeebe/installNodeMongoUbuntu16.04.sh  | bash</code>
+        <li>
+          Connect to the created instance
         </li>
       </ol>
     </p>
@@ -42,7 +42,22 @@ function start()
   <details>
     <summary>Hosting server</summary>
     <p>
-
+      <ol>
+        <li>Install dependencies using:
+          <code>curl -s https://gist.githubusercontent.com/tejaswigowda/f289e9bff13d152876e8d4b3281142f8/raw/df37df2e16a3166e686357a045751a7c18bbeebe/installNodeMongoUbuntu16.04.sh  | bash</code>
+        </li>
+        <li>Clone github repo with code</li>
+        <li>Add new inbound security rule
+          <ol>
+            <li>Type → custom tcp</li>
+            <li>Port → 8080</li>
+            <img src="./img/instance1.png" width = "500">
+          </ol>
+        </li>
+        <li>Make sure the port number used is not reserved
+          If reserved run <code>bash portmap.sh</code> <i>or</i> <code>sudo iptables -t nat -A PREROUTING -p tcp --dport &lt;port number you use&gt; -j REDIRECT --to &lt;port number in code&gt;</code> 
+        </li>
+      </ol>
     </p>
   </details>
   <details>
@@ -77,6 +92,15 @@ function start()
       <ul>
         <li>Download and install MongoDBCompass</li>
         <li>Connect using <code>mongodb://&lt;ec2 public ip&gt;:27017</code></li>
+      </ul>
+    </p>
+  </details>
+  <details>
+    <summary>Sending request with client</summary>
+    <p>
+      <ul>
+        <li>Upload code with arduino IDE with public ip of server, port number same as in .js file, and proper pin number(25)</li>
+        <li>Wifi id and password should match in code with that of hotspot with internet connection.</li>
       </ul>
     </p>
   </details>
