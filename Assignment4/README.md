@@ -3,7 +3,9 @@
 <img width="960" alt="image" src="https://github.com/nupoorb/AME494598Fall2023/assets/35562572/1ca2ef5d-3773-40be-af8c-828e201b26e2">
 
 <img width="960" alt="image" src="https://github.com/nupoorb/AME494598Fall2023/assets/35562572/f9cdf3a0-df0b-465c-94f5-669e0023b933">
-<h3>Getting values on MongoDBCompass</h3>
+<h3>Watch sending values</h3>
+<img width="960" alt="image" src="https://github.com/nupoorb/AME494598Fall2023/assets/35562572/cfe1cc75-d3c2-4ddd-9e81-a4e894f8431f">
+<h3>Getting sensor values on MongoDBCompass</h3>
 <img width="960" alt="image" src="https://github.com/nupoorb/AME494598Fall2023/assets/35562572/1e7738ee-532c-49c7-919e-baea78bc905a">
 
 <br>
