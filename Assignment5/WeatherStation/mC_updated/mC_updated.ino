@@ -20,7 +20,7 @@ unsigned long lastTime = 0;
 // Timer set to 10 minutes (600000)
 //unsigned long timerDelay = 600000;
 // Set timer to 5 seconds (5000)
-unsigned long timerDelay = 300;
+unsigned long timerDelay = 5000;
 
 String response;
 
@@ -88,10 +88,8 @@ void setup() {
 void loop() {
   // start working...
 
-  static int last_time1 = millis();
-
-  if(millis() - last_time1 >5000 ){
-    last_time1 = millis();
+    if(millis() - lastTime > timerDelay ){
+    
     Serial.println("=================================");
     Serial.println("Sample DHT11...");
   
@@ -119,12 +117,19 @@ void loop() {
         int t = (int)temperature;
         int h = (int)humidity;
         String url = String(serverName) + "?t=" + t + "&h=" + h;
-        Serial.println(url);       
+        Serial.println(url);  
+
+        unsigned long http_Time_Start = millis();   
         response = httpGETRequest(url.c_str());
+        unsigned long http_Time_End = millis();
+
+        unsigned long http_Time = http_Time_End - http_Time_Start;
+        Serial.print("Time taken for http request: ");Serial.println(http_Time);
         Serial.println(response);
 
 
 
   // DHT11 sampling rate is 1HZ.
+    lastTime = millis() - http_Time;
   }
 }
