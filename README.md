@@ -7,4 +7,5 @@ Folders:
 * Assignment 2 - Assignment 2
 * Assignment 3 - Resume Website
 * Assignment 4 - Assignment 4
-* Assignment 5 - Assignment 5 
+* Assignment 5 - Assignment 5
+* Assignment 6 - Project Proposal
