@@ -20,7 +20,7 @@ function getDataFromServer()
 		var currentTime = new Date().getTime();
 		for(var i = 0; i < obj.length; i++){
 			var timestamp = parseInt(obj[i].time);
-			if(timestamp > lastAddedTS && currentTime-timestamp>selectedMinutes*60000){
+			if(currentTime-timestamp<selectedMinutes*60000){
 				columns[0].push(getTSInFormat(timestamp));
 				columns[1].push(obj[i].t || 0);
 				columns[2].push(obj[i].h || 0);
