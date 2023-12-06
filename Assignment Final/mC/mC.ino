@@ -8,11 +8,11 @@ TTGOClass *ttgo;
 #include <HTTPClient.h>
 
 
-const char* ssid = "g14armyy";
-const char* password = "g14armyy";
+const char* ssid = "g14armmy";
+const char* password = "g14armmy";
 
 //Your Domain name with URL path or IP address with path
-const char* serverName = "http://34.228.228.199:80/setValue";
+const char* serverName = "http://52.90.24.204:80/setValue";
 
 // the following variables are unsigned longs because the time, measured in
 // milliseconds, will quickly become a bigger number than can be stored in an int.
@@ -87,49 +87,35 @@ void setup() {
 
 void loop() {
   // start working...
+  Serial.println("=================================");
+  Serial.println("Sample DHT11...");
+ 
 
-    if(millis() - lastTime > timerDelay ){
-    
-    Serial.println("=================================");
-    Serial.println("Sample DHT11...");
-  
+  // read without samples.
+  byte temperature = 0;
+  byte humidity = 0;
+  int err = SimpleDHTErrSuccess;
+  if ((err = dht11.read(&temperature, &humidity, NULL)) != SimpleDHTErrSuccess) {
+    Serial.print("Read DHT11 failed, err="); Serial.println(err); delay(1000);
+    return;
+  }
 
-    // read without samples.
-    byte temperature = 0;
-    byte humidity = 0;
-    int err = SimpleDHTErrSuccess;
-    if ((err = dht11.read(&temperature, &humidity, NULL)) != SimpleDHTErrSuccess) {
-      Serial.print("Read DHT11 failed, err="); Serial.println(err); 
-      static int last_time2 = millis();
-      if(millis() - last_time2 > 1000){
-        last_time2 = millis();
-        return;
-      }
-    }
+  Serial.print("Sample OK: ");
+  Serial.print(String((float)temperature) + "* C, ");
+  Serial.println(String((float)humidity) + "% H");
 
-    Serial.print("Sample OK: ");
-    Serial.print(String((float)temperature) + "* C, ");
-    Serial.println(String((float)humidity) + "% H");
+      ttgo->tft->drawString(String((int)temperature*1.8 + 32) + " *F",  5, 10);
+      ttgo->tft->drawString(String(humidity) + " % H",  5, 40);
 
-        ttgo->tft->drawString(String((int)temperature*1.8 + 32) + " *F",  5, 10);
-        ttgo->tft->drawString(String(humidity) + " % H",  5, 40);
-
-        int t = (int)temperature;
-        int h = (int)humidity;
-        String url = String(serverName) + "?t=" + t + "&h=" + h;
-        Serial.println(url);  
-
-        unsigned long http_Time_Start = millis();   
-        response = httpGETRequest(url.c_str());
-        unsigned long http_Time_End = millis();
-
-        unsigned long http_Time = http_Time_End - http_Time_Start;
-        Serial.print("Time taken for http request: ");Serial.println(http_Time);
-        Serial.println(response);
+      int t = (int)temperature;
+      int h = (int)humidity;
+      String url = String(serverName) + "?t=" + t + "&h=" + h;
+      Serial.println(url);       
+      response = httpGETRequest(url.c_str());
+      Serial.println(response);
 
 
 
   // DHT11 sampling rate is 1HZ.
-    lastTime = millis() - http_Time;
-  }
+  delay(5000);
 }
