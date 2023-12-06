@@ -11,7 +11,7 @@ var VALUEh = 0;
 var VALUEtime = 0;
 
 
-var db = MS.db("mongodb://localhost:27017/sensorData")
+var db = MS.db("mongodb://34.203.248.29:27017/sensorData")
 app.get("/", function (req, res) {
     res.redirect("/index.html");
 });
